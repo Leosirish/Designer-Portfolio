@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Unfold &mdash; A onepage portfolio HTML template by Colorlib</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <meta name="description" content="" />
+    <meta name="keywords" content="html, css, javascript, jquery" />
+    <meta name="author" content="" />
+
+    <link rel="stylesheet" href="css/vendor/icomoon/style.css" />
+    <link rel="stylesheet" href="css/vendor/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/vendor/animate.min.css" />
+    <link rel="stylesheet" href="css/vendor/aos.css" />
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/vendor/jquery.fancybox.min.css" />
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      /* This is the required project styling. Will contain essential CSS styles like:
+   * Flex property
+   * Grid layout
+   * Cards and sections
+*/
+
+      @import url(https://fonts.googleapis.com/css?family=Raleway:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+      /* variables */
+      :root {
+        /* Colors */
+        --primary-color: #ffcd42;
+        --secondary-color: #ffd35c;
+        --bg-primary: #ffffff;
+        --text-color: #222222;
+        --text-color-two: #ffffff;
+        --bg-secondary: #000000;
+        --card-background: #f4f4f4;
+        --bg-secondary-two: #111111;
+
+        --shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+
+        /* Font Weight */
+        --weight-small: 400;
+        --weight-semibold: 600;
+        --weight-bold: 800;
+
+        /* Max width */
+        --width-small: 600px;
+        --width-medium: 1100px;
+        --width-large: 1300px;
+      }
+
+      [data-theme="dark"] {
+        --primary-color: #ffcd42;
+        --secondary-color: #ffd35c;
+        --bg-primary: #000000;
+        --text-color: #ffffff;
+        --text-color-two: #222222;
+        --bg-secondary: #ffffff;
+        --card-background: #111111;
+        --bg-secondary-two: #f4f4f4;
+        --shadow: 0 2px 10px rgba(95, 95, 95, 0.2);
+      }
+
+      html {
+        font-size: 100%;
+        scroll-behavior: smooth;
+      }
+
+      /* Reset default styling */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--text-color);
+      }
+
+      /* Main styling */
+      body {
+        background: var(--bg-primary);
+        color: var(--text-color);
+        font-family: "Raleway", sans-serif;
+        line-height: 1.5;
+      }
+
+      /* Navbar */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 20;
+        background: var(--bg-primary);
+      }
+
+      .navbar .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 20;
+        height: 80px;
+        width: 100%;
+      }
+
+      .navbar .nav-menu {
+        display: flex;
+        align-items: center;
+        background: var(--bg-primary);
+      }
+
+      .navbar .nav-link {
+        margin: 0 1rem;
+        font-size: 0.8rem;
+        font-weight: var(--weight-semibold);
+      }
+
+      .navbar #logo img {
+        display: block;
+        width: 40px;
+      }
+
+      .navbar .btn {
+        margin-right: 1.5rem;
+      }
+
+      .fas.fa-arrow-right {
+        margin-left: 0.5rem;
+        font-size: 0.9rem;
+      }
+
+      /* hamburger */
+      .hamburger {
+        margin-bottom: 0.1rem;
+        display: none;
+      }
+
+      .bar {
+        display: block;
+        width: 23px;
+        height: 3px;
+        margin: 4px auto;
+        transition: all 0.3s ease-in-out;
+        border-radius: 30px;
+        background-color: var(--bg-secondary);
+      }
+
+      /* Hero section */
+      #hero {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      .profile-image {
+        width: 150px;
+        border-radius: 50%;
+        animation: bounce 1s infinite alternate;
+      }
+
+      @keyframes bounce {
+        from {
+          transform: translateY(0px);
+        }
+
+        to {
+          transform: translateY(-10px);
+        }
+      }
+
+      .division {
+        width: 100%;
+        height: 2px;
+        background-color: var(--card-background);
+        margin: 5.5rem 0;
+      }
+      /* Projects */
+      #projects {
+        display: flex;
+        flex-direction: column;
+        margin: 2rem auto 5rem;
+      }
+
+      #projects .btn {
+        align-self: center;
+        margin: 2rem 0;
+      }
+
+      .project {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: minmax(250px, auto);
+        grid-gap: 0.9rem;
+      }
+
+      .card .project-bio p {
+        font-size: 0.83rem;
+      }
+
+      .card .project-bio h3 {
+        font-size: 0.9rem;
+      }
+
+      .project-info {
+        display: flex;
+        justify-content: space-between;
+        opacity: 0;
+        position: relative;
+        transition: 0.5s ease-in-out;
+      }
+
+      .project-bio {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        position: relative;
+        top: 160px;
+        left: 10px;
+      }
+
+      /* Footer */
+      #footer {
+        background: #111111;
+      }
+
+      #footer .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        min-height: 160px;
+        text-align: center;
+      }
+
+      #footer a {
+        font-size: 0.8rem;
+        color: #fff;
+      }
+
+      #footer a:hover {
+        opacity: 0.6;
+      }
+
+      #footer .social {
+        margin: 0.9rem 0;
+      }
+
+      #footer .social img {
+        width: 20px;
+        height: 20px;
+      }
+
+      #footer .social a {
+        margin: 0 0.5rem;
+      }
+
+      #footer p {
+        font-size: 0.8rem;
+      }
+
+      /* Responsiveness */
+
+      @media (max-width: 1000px) {
+        .project {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+      }
+
+      @media (max-width: 670px) {
+        .navbar .nav-menu {
+          position: fixed;
+          right: -100vw;
+          top: 4.5rem;
+          flex-direction: column;
+          width: calc(80% - 10px);
+          transition: 0.3s;
+          box-shadow: var(--shadow);
+          padding: 2rem;
+          border-radius: 5px;
+          align-items: flex-start;
+        }
+
+        .navbar .btn {
+          margin: 0;
+          margin-top: 1rem;
+        }
+
+        .nav-menu.active {
+          right: 20px;
+        }
+
+        .nav-menu .nav-link {
+          font-size: 0.9rem;
+          margin: 0 0.2rem;
+        }
+
+        .nav-menu li {
+          margin-bottom: 0.5rem;
+          width: 100%;
+        }
+
+        .nav-menu .btn {
+          width: 100%;
+          text-align: center;
+          margin-top: 0.5rem;
+        }
+
+        .hamburger {
+          display: block;
+          cursor: pointer;
+          padding: 0.2rem 0.4rem;
+        }
+
+        .hamburger.active {
+          border: 1px dotted gray;
+        }
+
+        .hamburger.active .bar:nth-child(2) {
+          opacity: 0;
+        }
+
+        .hamburger.active .bar:nth-child(1) {
+          transform: translateY(6px) rotate(45deg);
+        }
+
+        .hamburger.active .bar:nth-child(3) {
+          transform: translateY(-8px) rotate(-45deg);
+        }
+      }
+
+      @media (max-width: 600px) {
+        .project {
+          display: grid;
+          grid-template-columns: 1fr;
+        }
+
+        .header-container .btn {
+          border-radius: 5px;
+          width: 80%;
+        }
+      }
+      /* ?This is where reusable styling of this template will be. 
+   !Will contain things like:
+   * Button styling
+   * Background color styling
+   * padding and margin
+*/
+
+      .container {
+        max-width: var(--width-medium);
+        margin: 0 auto;
+        padding: 1rem 2rem;
+      }
+
+      h1::selection,
+      h2::selection {
+        color: #111;
+        background: var(--primary-color);
+      }
+
+      /* Buttons */
+      .btn {
+        display: inline-block;
+        padding: 0.75rem 1.9rem;
+        border-radius: 30px;
+        text-transform: uppercase;
+        font-size: 0.82rem;
+        transition: 0.3s;
+      }
+
+      .btn-primary {
+        background: var(--primary-color);
+        color: #000000;
+      }
+
+      .btn-secondary {
+        margin: 5px 0;
+        background-color: var(--bg-secondary);
+        color: var(--bg-primary);
+      }
+
+      /* add hover to resume button */
+      .btn-primary:hover {
+        background: var(--secondary-color);
+      }
+
+      /* Dark mode toggle */
+      #switch {
+        display: none;
+      }
+
+      .toggle-icons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      .toggle-icons > img {
+        transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        width: 30px;
+      }
+
+      .moon {
+        transform: rotate(10deg);
+      }
+
+      #switch:checked + .toggle-icons .moon {
+        transform: rotate(250deg);
+      }
+
+      #switch:checked + .toggle-icons .sun {
+        transform: rotate(100deg);
+      }
+
+      /* Header Container */
+      .header-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 8rem;
+        padding: 1rem;
+      }
+
+      .header-container > div {
+        margin-top: 1rem;
+      }
+
+      .content-text {
+        text-align: center;
+        margin: 1.5rem 0;
+      }
+
+      .content-text h2 {
+        font-size: 3rem;
+        line-height: 1.2;
+        transition: 0.2s ease-in-out;
+      }
+
+      .content-text p {
+        padding: 0.5rem;
+        margin: 0 auto;
+        max-width: 700px;
+      }
+
+      /* Project cards */
+      .card {
+        padding: 1rem;
+        background: var(--card-background);
+        color: #ffffff;
+        border-radius: 5px;
+        transition: 0.4s ease-in-out;
+        cursor: pointer;
+      }
+
+      .card a {
+        color: #ffffff;
+        transition: 0.25s ease-in-out;
+        font-size: 1.1rem;
+        margin-right: 0.3rem;
+      }
+
+      .card a:hover {
+        color: var(--primary-color);
+      }
+
+      .card:hover {
+        box-shadow: inset 0 100px 1000px 10px rgba(0, 0, 0, 0.8);
+      }
+
+      .card:hover .project-info {
+        opacity: 1;
+      }
+
+      /* Project Images */
+
+      /* project 1 */
+      .card:nth-child(1) {
+        background: url(../assets/project/project-one.png) center center/cover;
+      }
+
+      /* Project 2 */
+      .card:nth-child(2) {
+        background: url(../assets/project/project-two.png) center center/cover;
+      }
+
+      /* Project 3 */
+      .card:nth-child(3) {
+        background: url(../assets/project/project-three.png) center center/cover;
+      }
+
+      /* Project 4 */
+      .card:nth-child(4) {
+        background: url(../assets/project/project-four.png) center center/cover;
+      }
+
+      /* Project 5 */
+      .card:nth-child(5) {
+        background: url(../assets/project/project-five.png) center center/cover;
+      }
+
+      /* Project 6 */
+      .card:nth-child(6) {
+        background: url(../assets/project/project-six.png) center center/cover;
+      }
+
+      /* Media Queries */
+      @media (max-width: 768px) {
+        .header-container {
+          margin-top: 7rem;
+          text-align: center;
+        }
+
+        .content-text h2 {
+          font-size: 2.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body data-spy="scroll" data-target=".site-nav-target" data-offset="200">
+    <div class="unslate_co--site-wrap">
+      <div class="unslate_co--site-inner">
+        <div class="lines-wrap">
+          <div class="lines-inner">
+            <div class="lines"></div>
+          </div>
+        </div>
+        <!-- END lines -->
+
+        <div
+          class="cover-v1 jarallax"
+          style="background-color: black"
+          id="home-section"
+        >
+          <div class="container">
+            <header id="hero">
+              <section class="header-container">
+                <img class="profile-image" src="./images/npp.svg" alt="" />
+                <h1 style="color: white">Hi I'm Sirish</h1>
+
+                <div style="color: white" class="content-text">
+                  <h2>Building digital</h2>
+                  <h2>products, brands, and experience.</h2>
+
+                  <p>
+                    A Frontend Developer and Visual Designer with experience in
+                    web design, brand identity and product design.
+                  </p>
+                </div>
+                <a
+                  href="https://wa.me/9803661386"
+                  class="btn btn-secondary"
+                  target="_blank"
+                  >Connect With Me</a
+                >
+              </section>
+            </header>
+          </div>
+
+          <a href="#portfolio-section" class="mouse-wrap smoothscroll">
+            <span class="mouse">
+              <span class="scroll"></span>
+            </span>
+            <span class="mouse-label">Scroll</span>
+          </a>
+        </div>
+        <!-- END .cover-v1 -->
+
+        <div class="unslate_co--section" id="portfolio-section">
+          <div class="container">
+            <div class="relative">
+              <div class="loader-portfolio-wrap">
+                <div class="loader-portfolio"></div>
+              </div>
+            </div>
+            <div id="portfolio-single-holder"></div>
+
+            <div class="portfolio-wrapper">
+              <div
+                class="d-flex align-items-center mb-4 gsap-reveal gsap-reveal-filter"
+              >
+                <h2 class="mr-auto heading-h2">
+                  <span class="gsap-reveal">Portfolio</span>
+                </h2>
+
+                <!-- <a href="#" class="text-white js-filter d-inline-block d-lg-none">Filter</a>
+              
+              <div class="filter-wrap">
+                <div class="filter ml-auto" id="filters">
+                  <a href="#" class="active" data-filter="*">All</a>
+                  <a href="#" data-filter=".web">Web</a>
+                  <a href="#" data-filter=".branding">Branding</a>
+                  <a href="#" data-filter=".illustration">Illustration</a>
+                  <a href="#" data-filter=".packaging">Packaging</a>
+                </div>
+              </div> -->
+              </div>
+
+              <div id="posts" class="row gutter-isotope-item">
+                <div
+                  class="item web branding col-sm-6 col-md-6 col-lg-4 isotope-mb-2"
+                >
+                  <a
+                    href="portfolio-single-1.html"
+                    class="portfolio-item ajax-load-page isotope-item gsap-reveal-img"
+                    data-id="1"
+                  >
+                    <div class="overlay">
+                      <span class="wrap-icon icon-link2"></span>
+                      <div class="portfolio-item-content">
+                        <h3>Shoe Rebranding</h3>
+                        <p>web, branding</p>
+                      </div>
+                    </div>
+                    <img
+                      src="images/work_1_md.jpg"
+                      class="lazyload img-fluid"
+                      alt="Images"
+                    />
+                  </a>
+                </div>
+                <div
+                  class="item branding packaging illustration col-sm-6 col-md-6 col-lg-4 isotope-mb-2"
+                >
+                  <a
+                    href="portfolio-single-3.html"
+                    class="portfolio-item ajax-load-page item-portrait isotope-item gsap-reveal-img"
+                    data-id="3"
+                  >
+                    <div class="overlay">
+                      <span class="wrap-icon icon-link2"></span>
+                      <div class="portfolio-item-content">
+                        <h3>Reworking</h3>
+                        <p>branding, packaging, illustration</p>
+                      </div>
+                    </div>
+                    <img
+                      src="images/work_2_md.jpg"
+                      class="lazyload img-fluid"
+                      alt="Images"
+                    />
+                  </a>
+                </div>
+
+                <div
+                  class="item branding packaging col-sm-6 col-md-6 col-lg-4 isotope-mb-2"
+                >
+                  <a
+                    href="portfolio-single-4.html"
+                    class="portfolio-item isotope-item gsap-reveal-img ajax-load-page"
+                    data-id="4"
+                  >
+                    <div class="overlay">
+                      <span class="wrap-icon icon-link2"></span>
+                      <div class="portfolio-item-content">
+                        <h3>Modern Building</h3>
+                        <p>branding, packaging</p>
+                      </div>
+                    </div>
+                    <img
+                      src="images/work_3_md.jpg"
+                      class="lazyload img-fluid"
+                      alt="Images"
+                    />
+                  </a>
+                </div>
+
+                <div
+                  class="item web packaging col-sm-6 col-md-6 col-lg-4 isotope-mb-2"
+                >
+                  <a
+                    href="images/work_4_full.jpg"
+                    class="portfolio-item isotope-item gsap-reveal-img"
+                    data-fancybox="gallery"
+                    data-caption="Watch"
+                  >
+                    <div class="overlay">
+                      <span class="wrap-icon icon-photo2"></span>
+                      <div class="portfolio-item-content">
+                        <h3>Watch</h3>
+                        <p>web, packaging</p>
+                      </div>
+                    </div>
+                    <img
+                      src="images/work_4_full.jpg"
+                      class="lazyload img-fluid"
+                      alt="Images"
+                    />
+                  </a>
+                </div>
+
+                <div
+                  class="item illustration packaging col-sm-6 col-md-6 col-lg-4 isotope-mb-2"
+                >
+                  <a
+                    href="images/work_5_md.jpg"
+                    class="portfolio-item isotope-item gsap-reveal-img"
+                    data-fancybox="gallery"
+                    data-caption="Shoe Rebranding"
+                  >
+                    <div class="overlay">
+                      <span class="wrap-icon icon-photo2"></span>
+                      <div class="portfolio-item-content">
+                        <h3>Shoe Rebranding</h3>
+                        <p>illustration, packaging</p>
+                      </div>
+                    </div>
+                    <img
+                      src="images/work_5_md.jpg"
+                      class="lazyload img-fluid"
+                      alt="Images"
+                    />
+                  </a>
+                </div>
+
+                <div
+                  class="item web branding col-sm-6 col-md-6 col-lg-4 isotope-mb-2"
+                >
+                  <a
+                    href="portfolio-single-2.html"
+                    class="portfolio-item ajax-load-page item-portrait isotope-item gsap-reveal-img"
+                    data-id="2"
+                  >
+                    <div class="overlay">
+                      <span class="wrap-icon icon-link2"></span>
+                      <div class="portfolio-item-content">
+                        <h3>Reshape</h3>
+                        <p>web, branding</p>
+                      </div>
+                    </div>
+                    <img
+                      src="images/work_6_md.jpg"
+                      class="lazyload img-fluid"
+                      alt="Images"
+                    />
+                  </a>
+                </div>
+
+                <div
+                  class="item branding packaging col-sm-6 col-md-6 col-lg-4 isotope-mb-2"
+                >
+                  <a
+                    href="images/work_7_a_md.jpg"
+                    class="portfolio-item item-portrait isotope-item gsap-reveal-img"
+                    data-fancybox="gallery"
+                    data-caption="Modern Building"
+                  >
+                    <div class="overlay">
+                      <span class="wrap-icon icon-photo2"></span>
+                      <div class="portfolio-item-content">
+                        <h3>Modern Building</h3>
+                        <p>branding, packaging</p>
+                      </div>
+                    </div>
+                    <img
+                      src="images/work_7_a_md.jpg"
+                      class="lazyload img-fluid"
+                      alt="Images"
+                    />
+                  </a>
+                </div>
+
+                <div
+                  class="item web branding col-sm-6 col-md-6 col-lg-4 isotope-mb-2"
+                >
+                  <a
+                    href="https://www.youtube.com/watch?v=mwtbEGNABWU"
+                    class="portfolio-item isotope-item gsap-reveal-img"
+                    data-fancybox="gallery"
+                    data-caption="Showreel 2019"
+                  >
+                    <div class="overlay">
+                      <span class="wrap-icon icon-play_circle_filled"></span>
+                      <div class="portfolio-item-content">
+                        <h3>Showreel 2019</h3>
+                        <p>web, branding</p>
+                      </div>
+                    </div>
+                    <img
+                      src="images/work_8_md.jpg"
+                      class="lazyload img-fluid"
+                      alt="Images"
+                    />
+                  </a>
+                </div>
+
+                <div
+                  class="item web illustration col-sm-6 col-md-6 col-lg-4 isotope-mb-2"
+                >
+                  <a
+                    href="images/work_9_a_md.jpg"
+                    class="portfolio-item isotope-item gsap-reveal-img"
+                    data-fancybox="gallery"
+                    data-caption="Render Packaging"
+                  >
+                    <div class="overlay">
+                      <span class="wrap-icon icon-photo2"></span>
+                      <div class="portfolio-item-content">
+                        <h3>Render Packaging</h3>
+                        <p>web, illustration</p>
+                      </div>
+                    </div>
+                    <img
+                      src="images/work_9_a_md.jpg"
+                      class="lazyload img-fluid"
+                      alt="Images"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="unslate_co--section" id="about-section">
+          <div class="container">
+            <div class="section-heading-wrap text-center mb-5">
+              <h2 class="heading-h2 text-center divider">
+                <span class="gsap-reveal">About Me</span>
+              </h2>
+              <span class="gsap-reveal">
+                <img src="images/divider.png" alt="divider" width="76" />
+              </span>
+            </div>
+
+            <div class="row mt-5 justify-content-between">
+              <div class="col-lg-7 mb-5 mb-lg-0">
+                <figure class="dotted-bg gsap-reveal-img">
+                  <img
+                    src="images/finalabout.png"
+                    alt="Image"
+                    class="img-fluid"
+                  />
+                </figure>
+              </div>
+              <div style="color: white" class="col-lg-4 pr-lg-5">
+                <h3 class="mb-4 heading-h3">
+                  <span class="gsap-reveal">We can make it together</span>
+                </h3>
+                <p class="lead gsap-reveal">
+                  Far far away, behind the word mountains, far from the
+                  countries Vokalia and Consonantia, there
+                  <a style="color: white" href="#">live the blind</a> texts.
+                </p>
+                <p class="mb-4 gsap-reveal">
+                  A small river named Duden flows by their place and supplies it
+                  with the necessary regelialia. It is a paradisematic country,
+                  in which roasted parts of sentences fly into your mouth.
+                </p>
+                <p class="gsap-reveal">
+                  <a
+                    style="background-color: #ffdc27; color: black"
+                    href="#"
+                    class="btn btn-outline-pill btn-custom-light"
+                    >Download my CV</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="unslate_co--section" id="services-section">
+          <div class="container">
+            <div class="section-heading-wrap text-center mb-5">
+              <h2 class="heading-h2 text-center divider">
+                <span class="gsap-reveal">My Services</span>
+              </h2>
+              <span class="gsap-reveal"
+                ><img
+                  src="https://technext.github.io/unfold/images/divider.png"
+                  alt="divider"
+                  width="76"
+              /></span>
+            </div>
+
+            <div class="row gutter-v3" style="color: white">
+              <div class="col-md-6 col-lg-4 mb-4">
+                <div class="feature-v1" data-aos="fade-up" data-aos-delay="0">
+                  <div class="wrap-icon mb-3">
+                    <img
+                      src="https://technext.github.io/unfold/images/svg/001-options.svg"
+                      alt="Image"
+                      width="45"
+                    />
+                  </div>
+                  <h3>
+                    Digital <br />
+                    Strategy
+                  </h3>
+                  <p>
+                    A small river named Duden flows by their place and supplies
+                    it with the necessary regelialia.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4 mb-4">
+                <div class="feature-v1" data-aos="fade-up" data-aos-delay="100">
+                  <div class="wrap-icon mb-3">
+                    <img
+                      src="https://technext.github.io/unfold/images/svg/002-chat.svg"
+                      alt="Icon"
+                      width="45"
+                    />
+                  </div>
+                  <h3>
+                    Web <br />
+                    Design
+                  </h3>
+                  <p>
+                    A small river named Duden flows by their place and supplies
+                    it with the necessary regelialia.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4 mb-4">
+                <div class="feature-v1" data-aos="fade-up" data-aos-delay="200">
+                  <div class="wrap-icon mb-3">
+                    <img
+                      src="https://technext.github.io/unfold/images/svg/003-contact-book.svg"
+                      alt="Image"
+                      class="img-fluid"
+                      width="45"
+                    />
+                  </div>
+                  <h3>
+                    User <br />
+                    Experience
+                  </h3>
+                  <p>
+                    A small river named Duden flows by their place and supplies
+                    it with the necessary regelialia.
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-4 mb-4">
+                <div class="feature-v1" data-aos="fade-up" data-aos-delay="0">
+                  <div class="wrap-icon mb-3">
+                    <img
+                      src="https://technext.github.io/unfold/images/svg/004-percentage.svg"
+                      alt="Image"
+                      width="45"
+                    />
+                  </div>
+                  <h3>
+                    Web <br />
+                    Development
+                  </h3>
+                  <p>
+                    A small river named Duden flows by their place and supplies
+                    it with the necessary regelialia.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4 mb-4">
+                <div class="feature-v1" data-aos="fade-up" data-aos-delay="100">
+                  <div class="wrap-icon mb-3">
+                    <img
+                      src="https://technext.github.io/unfold/images/svg/006-goal.svg"
+                      alt="Image"
+                      width="45"
+                    />
+                  </div>
+                  <h3>
+                    WordPress <br />
+                    Solutions
+                  </h3>
+                  <p>
+                    A small river named Duden flows by their place and supplies
+                    it with the necessary regelialia.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4 mb-4">
+                <div class="feature-v1" data-aos="fade-up" data-aos-delay="200">
+                  <div class="wrap-icon mb-3">
+                    <img
+                      src="https://technext.github.io/unfold/images/svg/005-line-chart.svg"
+                      alt="Image"
+                      width="45"
+                    />
+                  </div>
+                  <h3>
+                    Mobile <br />
+                    Applications
+                  </h3>
+                  <p>
+                    A small river named Duden flows by their place and supplies
+                    it with the necessary regelialia.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="unslate_co--section" id="journal-section">
+          <div class="container">
+            <div class="section-heading-wrap text-center mb-5">
+              <h2 class="heading-h2 text-center divider">
+                <span class="gsap-reveal">Blogs</span>
+              </h2>
+              <span class="gsap-reveal"
+                ><img src="images/divider.png" alt="divider" width="76"
+              /></span>
+            </div>
+
+            <div class="row gutter-v4 align-items-stretch">
+              <div
+                class="col-sm-6 col-md-6 col-lg-8 blog-post-entry"
+                data-aos="fade-up"
+                data-aos-delay="0"
+              >
+                <a
+                  href="blog-single.html"
+                  class="grid-item blog-item w-100 h-100"
+                >
+                  <div class="overlay">
+                    <div class="portfolio-item-content">
+                      <h3>A Mounteering Guide For Beginners</h3>
+                      <p class="post-meta">
+                        By Joefrey <span class="small">&bullet;</span> 5 mins
+                        read
+                      </p>
+                    </div>
+                  </div>
+                  <img src="images/post_1.jpg" class="lazyload" alt="Image" />
+                </a>
+              </div>
+              <div
+                class="col-sm-6 col-md-6 col-lg-4 blog-post-entry"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <a
+                  href="blog-single.html"
+                  class="grid-item blog-item w-100 h-100"
+                >
+                  <div class="overlay">
+                    <div class="portfolio-item-content">
+                      <h3>A Mounteering Guide For Beginners</h3>
+                      <p class="post-meta">
+                        By Joefrey <span class="small">&bullet;</span> 5 mins
+                        read
+                      </p>
+                    </div>
+                  </div>
+                  <img src="images/post_2.jpg" class="lazyload" alt="Image" />
+                </a>
+              </div>
+
+              <div
+                class="col-sm-6 col-md-6 col-lg-4 blog-post-entry"
+                data-aos="fade-up"
+                data-aos-delay="0"
+              >
+                <a
+                  href="blog-single.html"
+                  class="grid-item blog-item w-100 h-100"
+                >
+                  <div class="overlay">
+                    <div class="portfolio-item-content">
+                      <h3>A Mounteering Guide For Beginners</h3>
+                      <p class="post-meta">
+                        By Joefrey <span class="small">&bullet;</span> 5 mins
+                        read
+                      </p>
+                    </div>
+                  </div>
+                  <img src="images/post_3.jpg" class="lazyload" alt="Image" />
+                </a>
+              </div>
+              <div
+                class="col-sm-6 col-md-6 col-lg-4 blog-post-entry"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <a
+                  href="blog-single.html"
+                  class="grid-item blog-item w-100 h-100"
+                >
+                  <div class="overlay">
+                    <div class="portfolio-item-content">
+                      <h3>A Mounteering Guide For Beginners</h3>
+                      <p class="post-meta">
+                        By Joefrey <span class="small">&bullet;</span> 5 mins
+                        read
+                      </p>
+                    </div>
+                  </div>
+                  <img src="images/post_4.jpg" class="lazyload" alt="Image" />
+                </a>
+              </div>
+
+              <div
+                class="col-sm-6 col-md-6 col-lg-4 blog-post-entry"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <a
+                  href="blog-single.html"
+                  class="grid-item blog-item w-100 h-100"
+                >
+                  <div class="overlay">
+                    <div class="portfolio-item-content">
+                      <h3>A Mounteering Guide For Beginners</h3>
+                      <p class="post-meta">
+                        By Joefrey <span class="small">&bullet;</span> 5 mins
+                        read
+                      </p>
+                    </div>
+                  </div>
+                  <img src="images/post_5.jpg" class="lazyload" alt="Image" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END blog posts -->
+
+        <div class="unslate_co--section" id="contact-section">
+          <div class="container">
+            <div class="section-heading-wrap text-center mb-5">
+              <h2 class="heading-h2 text-center divider">
+                <span class="gsap-reveal">Get In Touch</span>
+              </h2>
+              <span class="gsap-reveal"
+                ><img src="images/divider.png" alt="divider" width="76"
+              /></span>
+            </div>
+
+            <div class="row justify-content-between">
+              <div class="col-md-6">
+                <form
+                  method="post"
+                  class="form-outline-style-v1"
+                  id="contactForm"
+                >
+                  <div class="form-group row mb-0">
+                    <div class="col-lg-6 form-group gsap-reveal">
+                      <label for="name">Name</label>
+                      <input
+                        name="name"
+                        type="text"
+                        class="form-control"
+                        id="name"
+                      />
+                    </div>
+                    <div class="col-lg-6 form-group gsap-reveal">
+                      <label for="email">Email</label>
+                      <input
+                        name="email"
+                        type="email"
+                        class="form-control"
+                        id="email"
+                      />
+                    </div>
+                    <div class="col-lg-12 form-group gsap-reveal">
+                      <label for="message">Write your message...</label>
+                      <textarea
+                        name="message"
+                        id="message"
+                        cols="30"
+                        rows="7"
+                        class="form-control"
+                      ></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group row gsap-reveal">
+                    <div class="col-md-12 d-flex align-items-center">
+                      <input
+                        type="submit"
+                        class="btn btn-outline-pill btn-custom-light mr-3"
+                        value="Send Message"
+                      />
+                      <span class="submitting"></span>
+                    </div>
+                  </div>
+                </form>
+                <div id="form-message-warning" class="mt-4"></div>
+                <div id="form-message-success">
+                  Your message was sent, thank you!
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="contact-info-v1">
+                  <div class="gsap-reveal d-block">
+                    <span class="d-block contact-info-label">Email</span>
+                    <a href="#" class="contact-info-val">info@yourdomain.com</a>
+                  </div>
+                  <div class="gsap-reveal d-block">
+                    <span class="d-block contact-info-label">Phone</span>
+                    <a href="#" class="contact-info-val">+12 345 6789 012</a>
+                  </div>
+                  <div class="gsap-reveal d-block">
+                    <span class="d-block contact-info-label">Address</span>
+                    <address class="contact-info-val">
+                      273 South Riverview Rd. <br />
+                      New York, NY 10011
+                    </address>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END .unslate_co-site-inner -->
+
+      <footer class="unslate_co--footer unslate_co--section">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-7">
+              <div class="footer-site-logo">
+                <a href="#">Unfold<span>.</span></a>
+              </div>
+
+              <ul class="footer-site-social">
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Dribbble</a></li>
+                <li><a href="#">Behance</a></li>
+              </ul>
+
+              <p class="site-copyright">
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy;
+                <script>
+                  document.write(new Date().getFullYear());
+                </script>
+                All rights reserved | This template is made with
+                <i class="icon-heart" aria-hidden="true"></i> by
+                <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Loader -->
+    <div id="unslate_co--overlayer"></div>
+    <div class="site-loader-wrap">
+      <div class="site-loader"></div>
+    </div>
+
+    <script src="js/scripts-dist.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
